@@ -1,0 +1,4 @@
+{
+    "port" : 5000,
+    "rabbitmq_url" : "amqp://rabbitmq"
+}

@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    restart: unless-stopped    
+    ports:
+      - "8080:15672"
+      - "5672:5672"
+      - "25676:25676"      
+      
+  nodebackend:
+    build: ./nodebackend
+    container_name: nodebackend
+    hostname: nodebackend
+    restart: unless-stopped
+    volumes:
+      - ./nodebackend:/home/node/app/
+    ports:
+      - "5000:5000"
+    depends_on:
+      - rabbitmq
+
+networks:
+  default:
