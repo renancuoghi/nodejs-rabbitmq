@@ -1,4 +1,6 @@
 {
     "port" : 5000,
-    "rabbitmq_url" : "amqp://rabbitmq"
+    "rabbitmq_url" : "amqp://rabbitmq",
+    "defaultQueue" : "queuetest",
+    "errorQueue" : "errors"
 }
